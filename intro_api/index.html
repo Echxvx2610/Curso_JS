@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        button {
+            color: white;
+            background-color: crimson;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            color: crimson;
+            background-color: aliceblue;
+        }
+
+        div {
+            width: 80%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-wrap: wrap; /* Para permitir que los elementos se ajusten automáticamente */
+            justify-content: space-around; /* Distribuye los elementos con espacio entre ellos */
+            gap: 20px; /* Añade espacio entre los divs */
+        }
+
+        /* Estilo para cada item del resultado */
+        .result-item {
+            width: 200px; /* Tamaño fijo */
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .result-item p {
+            margin: 5px 0;
+        }
+
+        .result-item p strong {
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="btn-api">Cargar API</button>
+        <div id="result"></div> <!-- Aquí se mostrarán los resultados -->
+    </div>
+
+    <script>
+        document.getElementById("btn-api").addEventListener("click", () => {
+            fetch("https://jsonplaceholder.typicode.com/todos/")
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById("result");
+                // Limpiar el contenido previo
+                resultDiv.innerHTML = '';
+
+                // Recorremos todos los elementos de la respuesta
+                data.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('result-item'); // Agregar clase para estilo
+
+                    itemDiv.innerHTML = `
+                        <p><strong>Usuario:</strong> ${item.userId}</p>
+                        <p><strong>ID:</strong> ${item.id}</p>
+                        <p><strong>Título:</strong> ${item.title}</p>
+                        <p><strong>Completado:</strong> ${item.completed}</p>
+                    `;
+
+                    resultDiv.appendChild(itemDiv);
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        });
+    </script>
+</body>
+</html>
