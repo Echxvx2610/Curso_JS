@@ -1,11 +1,25 @@
-// Seleccionamos el contenedor
-let contenido = document.getElementById("container");
+document.write(`<h1>Bucles e iteraciones</h1>`);
 
-// Creamos un nuevo párrafo
-let nuevoParrafo = document.createElement("p");
+// if
+document.write(`<h2>If</h2>`);
+let isOn = true //prompt("Ingrese true o false [1,0]");
+if (isOn) {
+    document.write("isOn: Verdadero");
+}else{
+    document.write("isOn: Falso");
+}
 
-// Asignamos el texto al nuevo párrafo
-nuevoParrafo.textContent = "Bucles ( while & do while )";
+// for
+document.write(`<h2>For</h2>`);
+for (let i = 0; i < 10; i++) {
+    document.write(i + " ");
+}
 
-// Añadimos el párrafo al contenedor
-contenido.appendChild(nuevoParrafo);
+// while
+document.write(`<h2>While</h2>`); 
+let i = 0;
+while (i < 10){
+    document.write(i + " ");
+    i++;
+}
+
