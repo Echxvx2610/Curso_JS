@@ -1,0 +1,72 @@
+*{
+    font-family: monospace;
+    font-size: 25px;
+}
+
+h1,h2{
+    text-align:center; 
+    text-transform:uppercase; 
+    font-weight:bold;
+    font-size: 1.5rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0;
+    height: 100vh;
+    background-color: #ffffffbd;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(247, 240, 240, 0.947);
+    width: 80%;
+    max-width: 650px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 50px;
+    flex-direction: column; /* Para asegurar que el contenedor sea en columna */
+}
+
+#result {
+    background-color: rgb(194, 182, 182);
+    height: 100px;
+    width: 95%;
+    margin: 0;
+    padding: 50px auto;
+    padding-right: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: ghostwhite;
+    font-family: "DS-Digital", sans-serif;
+    font-size: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Organiza los botones en 4 columnas */
+    grid-gap: 10px; /* Espacio entre los botones */
+    padding: 10px;
+    width: 95%;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.5rem;
+    background-color: #ddd;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #bbb;
+}
