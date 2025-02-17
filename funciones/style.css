@@ -25,7 +25,7 @@ body {
     background-color: rgba(247, 240, 240, 0.947);
     width: 80%;
     max-width: 650px;
-    height: 500px;
+    height: 510px;
     margin: 0 auto;
     border-radius: 50px;
     flex-direction: column; /* Para asegurar que el contenedor sea en columna */
@@ -34,8 +34,8 @@ body {
 #result {
     background-color: rgb(194, 182, 182);
     height: 100px;
-    width: 95%;
-    margin: 0;
+    width: 93%;
+    margin: 0 auto;
     padding: 50px auto;
     padding-right: 25px;
     text-align: center;
